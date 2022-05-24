@@ -5,8 +5,8 @@ const Chat = ({socket, username, room}) => {
 
     const [messageList, setMessageList] = useState([]);
     const [currentMessage, setCurrentMessage] = useState('');
-    const [ isTyping, setTyping ] = useState(false);
-    const [ typingMessage, setTypingMessage] = useState('')
+    // const [ isTyping, setTyping ] = useState(false);
+    // const [ typingMessage, setTypingMessage] = useState('')
 
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const Chat = ({socket, username, room}) => {
         socket.on('output-messages', messages => {
             setMessageList(messages)
         })
-    }, []);
+    });
 
 
     const sendMessage =  () => {
@@ -82,9 +82,9 @@ const Chat = ({socket, username, room}) => {
                     </div>
                     );
                 })}
-                    {isTyping === true && <div className="chat-message__typing">
-                        {typingMessage}
-                    </div>  }
+                    {/*{isTyping === true && <div className="chat-message__typing">*/}
+                    {/*    {typingMessage}*/}
+                    {/*</div>  }*/}
                 </ScrollToBottom>
             </div>
             <div className="chat-footer">
