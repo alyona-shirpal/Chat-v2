@@ -20,6 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://real-chat-v2.com",
   "eslintConfig": {
     "extends": [
       "react-app",
