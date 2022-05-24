@@ -1,6 +1,6 @@
 import './App.css';
 import io from 'socket.io-client';
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import Chat from "./components/Chat/Chat";
 
 const socket = io.connect("http://localhost:4000");
@@ -10,14 +10,16 @@ function App() {
   const [room, setRoom] = useState('');
   const [showChat, setShowChat] = useState(false);
 
+
   const joinRoom = () => {
 
       if(username !== "" && room !== "") {
-          socket.emit("join_room",room);
+          socket.emit("join_room", { room, username} );
           setShowChat(true)
       }
-
   };
+
+
 
   return (
     <div className="App">

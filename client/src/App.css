@@ -131,6 +131,12 @@ body {
     justify-content: flex-end;
 }
 
+.chat-message__typing {
+    justify-content: center;
+    background-color: cornflowerblue;
+    margin: 5px;
+}
+
 #other .message-content {
     justify-content: flex-end;
     background-color: cornflowerblue;
