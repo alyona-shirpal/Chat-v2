@@ -9,7 +9,7 @@ const { Server } = require('socket.io');
 const Message = require('./models/Message')
 const Room = require("./models/Room");
 
-mongoose.connect('mongodb://localhost:27017/chat-v2').then(()=>{
+mongoose.connect('mongodb://chat-v2-mongo:27017/db').then(()=>{
     console.log('mongoose connected successfully')
 })
 
@@ -25,7 +25,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "*",
         methods: ["GET", "POST"],
 
     }
